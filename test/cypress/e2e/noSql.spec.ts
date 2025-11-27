@@ -11,7 +11,7 @@ describe('/rest/products/reviews', () => {
       cy.task('isDocker').then((isDocker) => {
         if (!isDocker) {
           cy.window().then(() => {
-            void fetch(
+            fetch(
               `${Cypress.config('baseUrl')}/rest/products/sleep(1000)/reviews`,
               {
                 method: 'GET',
